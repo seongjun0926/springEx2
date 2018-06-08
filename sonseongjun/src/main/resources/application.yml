@@ -1,0 +1,38 @@
+###########################################
+# 20180605 손성준 : 로컬 환경                               #
+########################################### 
+spring:
+  profiles:
+    active: local
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    locale: ko
+    favicon:
+      enabled: true
+  resources:
+    chain:
+      enabled: true
+  datasource:
+    platform: oracle
+    driverClassName: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:oracle:thin:@localhost:1521:xe
+    username: root
+    password: root
+    cache-seconds: -1 
+    encoding: UTF-8
+#tomcat
+server:
+  address: localhost
+  port: 8080    
+  session:
+    timeout: 600
+  error:
+    whitelabel:
+      enabled: false    
+#mybatis
+mybatis:  
+  config-location: classpath:sqlmap/sqlmap-config.xml
+  mapper-locations: classpath:sqlmap/mapper/**/*.xml
+  type-aliases-package: com.test.lotte

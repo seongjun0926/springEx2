@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.lotte.service.UserMapper">
+  
+  <!-- 유저 정보 select -->
+  <select id="search" resultType="com.test.lotte.model.UserModel">
+	SELECT *
+	  FROM EXAM
+  </select>
+  <!-- 유저 정보 insert -->
+  <insert id="insert" parameterType="com.test.lotte.model.UserModel">
+  	INSERT INTO EXAM(ID
+  				    ,STU_NM
+  				    ,SCORE1
+  				    ,SCORE2
+  				    ,SCORE3
+  				    ,SCORE4
+  				    ,SCORE5
+  				    ,SCO_AVG
+  				    )VALUES(
+  					#{id}
+  				   ,#{stuNm}
+  				   ,#{score1}
+  				   ,#{score2}
+  				   ,#{score3}
+  				   ,#{score4}
+  				   ,#{score5}
+  				   ,#{scoAvg}
+  				   )
+  </insert>
+   <!-- filedownd 조건은 sco_avg 내림차순 -->
+   <select id="fileDown" resultType="com.test.lotte.model.UserModel">	
+		SELECT 
+			RANK() OVER (ORDER BY SCO_AVG DESC) AS RANK_NUM
+			,ID
+			,STU_NM
+			,SCORE1
+			,SCORE2
+			,SCORE3
+			,SCORE4
+			,SCORE5
+			,SCO_AVG
+		FROM EXAM
+  </select>
+</mapper>

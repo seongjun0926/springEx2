@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.test.lotte</groupId>
+	<artifactId>sonseongjun</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sonseongjun</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.2.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- 20180605 손성준 프로젝트 롬복 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- 20180605 손성준 log4jdbc -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+			<version>1.16</version>
+		</dependency>
+		<!-- 20180605 손성준 jstl-->
+		<dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.tomcat.embed</groupId>
+		  <artifactId>tomcat-embed-jasper</artifactId>
+		  <scope>provided</scope>
+		</dependency>
+		<dependency>
+		  <groupId>org.apache.tiles</groupId>
+		  <artifactId>tiles-jsp</artifactId>
+		  <version>3.0.5</version>
+		</dependency>
+		<!-- 20180605 손성준 webjars -->
+		<dependency>
+		  <groupId>org.webjars</groupId>
+		  <artifactId>jquery</artifactId> 	
+		  <version>2.2.4</version>
+		</dependency>
+	    <!-- 20180605 손성준 webjars -->
+      	<dependency>
+          <groupId>org.webjars.bower</groupId>
+          <artifactId>bootstrap</artifactId>
+          <version>3.3.4</version>
+      	</dependency>
+      	<!-- 20180605 손성준 webjars-location -->
+    	<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>webjars-locator</artifactId>
+		    <version>0.30</version>
+		</dependency>
+		<!-- 20180605 손성준 utility -->
+		<dependency>
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-lang3</artifactId>
+		  <version>3.4</version><!--$NO-MVN-MAN-VER$-->
+		</dependency>
+		<!-- 20180605 손성준 tomcat-maven -->
+		<dependency>
+		  <groupId>org.apache.tomcat.maven</groupId>
+		  <artifactId>common-tomcat-maven-plugin</artifactId>
+		  <version>2.2</version>
+		</dependency>
+		<!-- 20180605 손성준 json -->
+		<dependency>
+		  <groupId>com.googlecode.json-simple</groupId>
+		  <artifactId>json-simple</artifactId>
+		</dependency>
+		<!-- 20180605 손성준 oracle -->
+		<dependency>
+			<groupId>oracle.ojdbc8</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>12.2.0.1</version>
+		</dependency>
+		<!-- 20180605 손성준 taglibs -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- 20180605 손성준 failOnMissingWebXml -->
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			      <artifactId>maven-war-plugin</artifactId>
+			      <configuration>
+			         <failOnMissingWebXml>false</failOnMissingWebXml>
+			      </configuration>
+			</plugin>
+		</plugins>
+		
+	</build>
+
+
+</project>
